@@ -11,8 +11,6 @@ import java.util.ArrayList;
 
 public class ProblemEXTests {
 
-
-
     /* title. 테스트 코드 기반으로 JPA 를 사용하지 않을 때 문제 EX */
 
     /* comment.
@@ -69,6 +67,7 @@ public class ProblemEXTests {
         ResultSet rset = stmt.executeQuery(query);
 
         List<Menu> menu = new ArrayList<>();
+
 
     }
 
