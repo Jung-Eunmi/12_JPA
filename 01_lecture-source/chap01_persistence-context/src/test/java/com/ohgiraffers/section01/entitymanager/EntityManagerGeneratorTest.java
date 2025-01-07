@@ -45,6 +45,7 @@ public class EntityManagerGeneratorTest {
     @DisplayName("엔티티 매니저 생성 확인")
     void testCreateManager() {
         // 아까 만든 매니저 생성하는 메소드
+        // 매니저를 새로 생성할때마다 다른 hashCode 반환
         EntityManager manager = EntityManagerGenerator.getInstance();
 
         EntityManager manager2 = EntityManagerGenerator.getInstance();

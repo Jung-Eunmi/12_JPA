@@ -25,7 +25,7 @@ public class EntityManagerCRUD {
         EntityTransaction transaction = manager.getTransaction();
         // 시작
         transaction.begin();
-        // 등록
+        // 등록 : persist
         manager.persist(newMenu);
         // 등록 한 엔티티를 반영하라고 명령
         manager.flush();
@@ -47,7 +47,7 @@ public class EntityManagerCRUD {
 
         EntityTransaction transaction = manager.getTransaction();
         transaction.begin();
-
+        // 수정 : set (자동으로 관리되고있는 엔티티라면 update 됨)
         foundMenu.setMenuName(name);
 
         transaction.commit();
@@ -63,7 +63,7 @@ public class EntityManagerCRUD {
         EntityTransaction transaction = manager.getTransaction();
 
         transaction.begin();
-
+        // 삭제 : remove
         manager.remove(foundMenu);
 
         transaction.commit();
