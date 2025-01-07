@@ -60,8 +60,12 @@
     "Gradle.EntityManagerCRUDTest.testRemoveMenu.executor": "Run",
     "Gradle.EntityManagerGeneratorTest.testCreateFactory.executor": "Run",
     "Gradle.EntityManagerGeneratorTest.testCreateManager.executor": "Run",
+    "Gradle.LifeCycleTest.testDetachAndPersist.executor": "Run",
+    "Gradle.LifeCycleTest.testDetachEntity.executor": "Run",
     "Gradle.LifeCycleTest.testNotManaged.executor": "Run",
     "Gradle.LifeCycleTest.testOtherManager.executor": "Run",
+    "Gradle.LifeCycleTest.testRemoveEntity.executor": "Run",
+    "Gradle.LifeCycleTest.testSameManager.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -91,8 +95,8 @@
       <recent name="com.ohgiraffers.section03.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.LifeCycleTest.testSameManager">
-    <configuration name="EntityManagerCRUDTest.modifyTestMenu" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.LifeCycleTest.testRemoveEntity">
+    <configuration name="LifeCycleTest.testDetachAndPersist" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -105,7 +109,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.ohgiraffers.section02.EntityManagerCRUDTest.modifyTestMenu&quot;" />
+            <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testDetachAndPersist&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -116,7 +120,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="EntityManagerCRUDTest.testRemoveMenu" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LifeCycleTest.testDetachEntity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -129,31 +133,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.ohgiraffers.section02.EntityManagerCRUDTest.testRemoveMenu&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="LifeCycleTest.testNotManaged" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testNotManaged&quot;" />
+            <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testDetachEntity&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -178,6 +158,30 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testOtherManager&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="LifeCycleTest.testRemoveEntity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testRemoveEntity&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -214,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LifeCycleTest.testRemoveEntity" />
+        <item itemvalue="Gradle.LifeCycleTest.testDetachAndPersist" />
+        <item itemvalue="Gradle.LifeCycleTest.testDetachEntity" />
         <item itemvalue="Gradle.LifeCycleTest.testSameManager" />
         <item itemvalue="Gradle.LifeCycleTest.testOtherManager" />
-        <item itemvalue="Gradle.LifeCycleTest.testNotManaged" />
-        <item itemvalue="Gradle.EntityManagerCRUDTest.testRemoveMenu" />
-        <item itemvalue="Gradle.EntityManagerCRUDTest.modifyTestMenu" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +251,7 @@
       <workItem from="1736220099751" duration="449000" />
       <workItem from="1736220606749" duration="107000" />
       <workItem from="1736220748880" duration="54000" />
-      <workItem from="1736220840256" duration="5130000" />
+      <workItem from="1736220840256" duration="8344000" />
     </task>
     <servers />
   </component>
