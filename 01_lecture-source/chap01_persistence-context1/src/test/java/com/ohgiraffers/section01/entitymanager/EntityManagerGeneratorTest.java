@@ -1,6 +1,7 @@
 package com.ohgiraffers.section01.entitymanager;
 
 import jakarta.persistence.EntityManagerFactory;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -18,7 +19,16 @@ public class EntityManagerGeneratorTest {
     @DisplayName("엔티티 매니저 팩토리 생성 확인하기")
     void testCreateFactory() {
 
-        EntityManagerFactory factory =
+        EntityManagerFactory factory
+                = EntityManagerFactoryGenerator.getInstance();
 
+        EntityManagerFactory factory2
+                = EntityManagerFactoryGenerator.getInstance();
+
+        System.out.println("factory = " + factory.hashCode());
+        System.out.println("factory2.hashCode() = " + factory2.hashCode());
+
+        // 공장이 잘 생성 되었는지 확인
+        Assertions.assertNotNull(factory);
     }
 }

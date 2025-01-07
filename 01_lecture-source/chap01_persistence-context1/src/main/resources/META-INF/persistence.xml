@@ -8,7 +8,8 @@
             <property name="jakarta.persistence.jdbc.user" value="ohgiraffers"/>
             <property name="jakarta.persistence.jdbc.password" value="ohgiraffers"/>
             <!-- comment. JPA 내부적으로 동작하는 SQL 문을 보기 위한 설정 추가 -->
-            <property name="" value=""/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
         </properties>
     </persistence-unit>
     
