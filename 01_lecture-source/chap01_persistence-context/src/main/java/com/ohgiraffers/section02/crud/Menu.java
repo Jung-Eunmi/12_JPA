@@ -72,4 +72,15 @@ public class Menu {
     public void setOrderableStatus(String orderableStatus) {
         this.orderableStatus = orderableStatus;
     }
+
+    @Override
+    public String toString() {
+        return "Menu{" +
+                "menuCode=" + menuCode +
+                ", menuName='" + menuName + '\'' +
+                ", menuPrice=" + menuPrice +
+                ", categoryCode=" + categoryCode +
+                ", orderableStatus='" + orderableStatus + '\'' +
+                '}';
+    }
 }
