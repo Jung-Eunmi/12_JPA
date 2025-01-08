@@ -14,7 +14,7 @@ public class Price {
     private int regularPrice; // 정식 판매가격
 
     @Column(name = "discount_rate")
-    private int discountRate; // 할인율
+    private double discountRate; // 할인율
 
     @Column(name = "sell_price")
     private int sellPrice; // 할인율 적용 된 실제 가격
@@ -25,5 +25,10 @@ public class Price {
         this.regularPrice = regularPrice;
         this.discountRate = discountRate;
         this.sellPrice = sellPrice;
+    }
+
+    public Price(int regularPrice, double discountRate) {
+        this.regularPrice = regularPrice;
+        this.discountRate = discountRate;
     }
 }

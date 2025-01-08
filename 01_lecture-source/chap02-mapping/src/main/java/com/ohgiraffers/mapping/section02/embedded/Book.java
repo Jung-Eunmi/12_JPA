@@ -30,10 +30,10 @@ public class Book {
 
     public Book() {}
 
-    public Book(String bookTitle, String author, String pulisher, LocalDate createdDate, Price price) {
+    public Book(String bookTitle, String author, String publisher, LocalDate createdDate, Price price) {
         this.bookTitle = bookTitle;
         this.author = author;
-        this.pulisher = pulisher;
+        this.publisher = publisher;
         this.createdDate = createdDate;
         this.price = price;
     }

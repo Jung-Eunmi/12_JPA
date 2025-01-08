@@ -1,17 +1,18 @@
-package com.ohgiraffers.mapping.section02.embedded;
+package com.ohgiraffers.mapping.section03.compositekey.idclass;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class BookRepository {
+public class CartRepository {
 
     @PersistenceContext
     private EntityManager manager;
 
-    public void save(Book book) {
-        manager.persist(book);
-    }
+    public void save(Cart newCart) {
 
+        manager.persist(newCart);
+
+    }
 }
