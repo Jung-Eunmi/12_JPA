@@ -95,7 +95,7 @@
       <recent name="com.ohgiraffers.section03.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.EntityManagerGeneratorTest.testCreateManager">
+  <component name="RunManager" selected="Gradle.LifeCycleTest.testNotManaged">
     <configuration name="EntityManagerGeneratorTest.testCreateFactory" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -168,7 +168,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="LifeCycleTest.testDetachEntity" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="LifeCycleTest.testNotManaged" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -181,7 +181,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testDetachEntity&quot;" />
+            <option value="&quot;com.ohgiraffers.section03.entity.LifeCycleTest.testNotManaged&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,11 +218,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LifeCycleTest.testNotManaged" />
         <item itemvalue="Gradle.EntityManagerGeneratorTest.testCreateManager" />
         <item itemvalue="Gradle.EntityManagerGeneratorTest.testCreateFactory" />
         <item itemvalue="Gradle.LifeCycleTest.testRemoveEntity" />
         <item itemvalue="Gradle.LifeCycleTest.testDetachAndPersist" />
-        <item itemvalue="Gradle.LifeCycleTest.testDetachEntity" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +252,10 @@
       <workItem from="1736220606749" duration="107000" />
       <workItem from="1736220748880" duration="54000" />
       <workItem from="1736220840256" duration="8464000" />
-      <workItem from="1736233028678" duration="645000" />
+      <workItem from="1736233028678" duration="1218000" />
+      <workItem from="1736235079497" duration="9000" />
+      <workItem from="1736296067703" duration="77000" />
+      <workItem from="1736296185037" duration="911000" />
     </task>
     <servers />
   </component>
