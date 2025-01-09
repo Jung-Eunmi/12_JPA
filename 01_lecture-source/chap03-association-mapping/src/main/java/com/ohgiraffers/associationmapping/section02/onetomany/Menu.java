@@ -1,4 +1,4 @@
-package com.ohgiraffers.associationmapping.section01.manytoone;
+package com.ohgiraffers.associationmapping.section02.onetomany;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-@Entity(name = "menu_and_category")
+@Entity(name = "section02Menu")
 @Table(name = "tbl_menu")
 @NoArgsConstructor
 @AllArgsConstructor
@@ -25,14 +25,8 @@ public class Menu {
     @Column(name = "menu_price")
     private int menuPrice;
 
-    /* comment.
-    *   [영속성 전이]
-    *    특정 엔터티를 영속화(관리) 할 때, 연관관계에 있는 엔티티도 같이 0영속화 한다는 의미이다.
-    *    이 클래스에서 예를 들면 1번 메뉴를 영속화 할때 포함하는 Category 엔티티도 같이 영속화 한다는 의미이다. */
-
-    @ManyToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "category_code")
-    private Category category;
+    @Column(name = "category_code")
+    private int categoryCode;
 
     @Column(name = "orderable_status")
     private String orderableStatus;
