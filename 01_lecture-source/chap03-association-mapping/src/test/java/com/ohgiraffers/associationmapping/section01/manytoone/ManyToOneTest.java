@@ -50,7 +50,7 @@ public class ManyToOneTest {
         Menu foundMenu = service.findMenu(menuCode);
         
         Category category = foundMenu.getCategory();
-
+        System.out.println("foundMenu = " + foundMenu);
         System.out.println("category = " + category);
         
         Assertions.assertNotNull(category);

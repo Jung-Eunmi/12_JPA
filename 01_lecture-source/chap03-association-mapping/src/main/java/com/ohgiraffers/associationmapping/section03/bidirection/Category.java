@@ -13,6 +13,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+// comment. 양방향으로 참조할 때는 주인이 아닌쪽 즉 mappedBy 가 있는 쪽 ToString 을 없애야한다.
 //@ToString
 public class Category {
 
@@ -35,4 +36,10 @@ public class Category {
 
     @OneToMany(mappedBy = "category")
     private List<Menu> menuList;
+
+    public Category(int categoryCode, String categoryName, Integer ref) {
+        this.categoryCode = categoryCode;
+        this.categoryName = categoryName;
+        this.refCategoryCode = ref;
+    }
 }
