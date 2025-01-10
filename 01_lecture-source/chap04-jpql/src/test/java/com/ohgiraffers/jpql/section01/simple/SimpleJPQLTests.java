@@ -85,7 +85,7 @@ public class SimpleJPQLTests {
         String menuName = repository.selectSingleMenuByTypedQuery();
 
         //then
-        Assertions.assertEquals("한우딸기국밥", menuName);
+        Assertions.assertEquals("흑우딸기국밥", menuName);
         Assertions.assertEquals(repository.findMenu(8).getMenuName(), menuName);
     }
 
@@ -97,7 +97,10 @@ public class SimpleJPQLTests {
         Object menuName = repository.selectSingleMenuByQuery();
 
         //then
-        Assertions.assertEquals("한우딸기국밥", menuName);
+        Assertions.assertEquals("흑우딸기국밥", menuName);
+
+        // 검사 할 대상 instanceof 검사 대상 클래스,인터페이스
+        // menuName 이 String 인지 검사
         Assertions.assertTrue(menuName instanceof String);
     }
 
@@ -107,7 +110,7 @@ public class SimpleJPQLTests {
         //given
         //when
         Menu menu = repository.selectSingleRowByTypedQuery();
-
+        System.out.println("menu = " + menu);
         //then
         Assertions.assertEquals(8, menu.getMenuCode());
     }
@@ -133,6 +136,7 @@ public class SimpleJPQLTests {
 
         //then
         Assertions.assertNotNull(menuList);
+
 
         menuList.forEach(System.out::println);
         // 람다 & 스트림 문법으로서 식을 더욱 간결하게 만들어준다.
