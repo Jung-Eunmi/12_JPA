@@ -8,7 +8,7 @@ import lombok.ToString;
 
 @Entity
 @Table(name = "tbl_menu")
-@NoArgsConstructor  // Entity 객체는 Setter 는 주입하지않는다.
+@NoArgsConstructor  // Entity 객체는 Setter 는 주입하지않는다.(데이터의 무결성을 유지하기 위해서)
 @AllArgsConstructor
 @Getter
 @ToString
