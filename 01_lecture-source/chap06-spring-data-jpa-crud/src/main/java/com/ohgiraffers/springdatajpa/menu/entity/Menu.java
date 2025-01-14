@@ -1,10 +1,7 @@
 package com.ohgiraffers.springdatajpa.menu.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 @Entity
 @Table(name = "tbl_menu")
@@ -12,6 +9,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
+//@Builder(toBuilder = true)  // 2. @Builder 어노테이션 사용 update
 public class Menu {
 
     @Id
@@ -28,7 +26,26 @@ public class Menu {
     @Column(name = "category_code")
     private int categoryCode;
 
+    @ManyToOne
+    @JoinColumn(name = "category_code")
+    private Category category;
+
     @Column(name = "orderable_status")
     private String orderableStatus;
 
+//    1. setter 사용 update (지양하는 방식)
+//    public void setMenuName(String menuName) {
+//        // setter 함수로 전달 받은 menuName 필드에 대입
+//        this.menuName = menuName;
+//    }
+
+   // 3. builder 패턴 직접 구현
+    public Menu menuName(String var) {
+        this.menuName = var;
+        return this;
+    }
+
+//    public Menu builder() {
+//        return new Menu(menuCode, menuName,menuPrice,categoryCode,orderableStatus);
+//    }
 }

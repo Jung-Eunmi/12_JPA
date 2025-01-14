@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>메뉴 코드로 메뉴상세조회</title>
+    <title>쿼리 메소드로 입력 한 메뉴 가격 이상인 메뉴들 조회하기</title>
 </head>
 <body>
-    <h1>PathVariable 로 전달 받은 메뉴 상세 조회</h1>
-
-    <a th:href="@{/menu/delete(menuCode=${result.menuCode})}">삭제</a>
+    <h3 th:text="|${price} 원을 초과하는 메뉴 목록|"></h3>
 
     <table border="1">
         <tr>
@@ -19,7 +17,7 @@
             <th>판매상태</th>
         </tr>
 
-        <tr>
+        <tr th:each="result : ${menuList}">
             <td th:text="${result.menuCode}"></td>
             <td th:text="${result.menuName}"></td>
             <td th:text="${result.menuPrice}"></td>

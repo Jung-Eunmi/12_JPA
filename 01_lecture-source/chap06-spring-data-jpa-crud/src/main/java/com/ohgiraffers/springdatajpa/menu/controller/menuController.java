@@ -2,6 +2,7 @@ package com.ohgiraffers.springdatajpa.menu.controller;
 
 import com.ohgiraffers.springdatajpa.common.PageNation;
 import com.ohgiraffers.springdatajpa.common.PagingButton;
+import com.ohgiraffers.springdatajpa.menu.model.dto.CategoryDTO;
 import com.ohgiraffers.springdatajpa.menu.model.dto.MenuDTO;
 import com.ohgiraffers.springdatajpa.menu.model.service.MenuService;
 import lombok.RequiredArgsConstructor;
@@ -12,9 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -63,5 +62,71 @@ public class menuController {
         model.addAttribute("paging", pagingButton);
 
         return "menu/list";
+    }
+
+    @GetMapping("/querymethod")
+    public void queryMethod() {}
+
+    @GetMapping("/search")
+    public String findByMenuPrice(@RequestParam int menuPrice, Model model) {
+
+        List<MenuDTO> menuList = menuService.findByMenuPrice(menuPrice);
+
+        model.addAttribute("menuList", menuList);
+        model.addAttribute("price", menuPrice);
+
+        return "menu/searchResult";
+    }
+
+    // 등록
+    @GetMapping("/regist")
+    public void registPage() {}
+
+    // 등록 - fetch
+    @GetMapping(value = "/category", produces = "application/json; charset=UTF-8")
+    @ResponseBody
+    public List<CategoryDTO> findCategoryList() {
+        // return 구문이 view 를 지정하지않고, Data 를 리턴한다.
+        return menuService.findAllCategory();
+    }
+
+    // 등록
+    @PostMapping("/regist")
+    public String regist(@ModelAttribute MenuDTO newMenu) {
+
+        System.out.println("view 에서 전달 받은 newMenu = " + newMenu);
+        menuService.registNewMenu(newMenu);
+
+        return "redirect:/menu/list";
+    }
+
+
+    @GetMapping("/modify")
+    public void modifyPage() {}
+
+    @PostMapping("/modify")
+    public String modifyMenu(@ModelAttribute MenuDTO modifyMenu) {
+
+        System.out.println("수정 할 메뉴 정보 객체 = " + modifyMenu);
+        menuService.modifyMenu(modifyMenu);
+        return "redirect:/menu/" + modifyMenu.getMenuCode();
+    }
+
+//    @GetMapping("/delete")
+//    public String deleteMenu(@RequestParam int menuCode){
+//        menuService.deleteByMenuCode(menuCode);
+//        System.out.println("삭제할 번호 = " + menuCode);
+//        return "redirect:/menu/list";
+//    }
+
+    @GetMapping("/delete")
+    public void deletePage() {}
+
+    @PostMapping("/delete")
+    public String deleteMenu(@RequestParam int menuCode){
+
+        menuService.deleteMenu(menuCode);
+
+        return "redirect:/menu/list";
     }
 }

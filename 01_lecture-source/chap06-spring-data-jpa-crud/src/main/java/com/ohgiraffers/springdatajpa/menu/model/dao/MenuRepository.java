@@ -4,6 +4,8 @@ import com.ohgiraffers.springdatajpa.menu.entity.Menu;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /* comment.
 *   JpaRepository 란?
 *   EntityManager 와 EntityManagerFactory, EntityTransaction 을 구현한 클래스이다.
@@ -12,4 +14,7 @@ import org.springframework.stereotype.Repository;
                             // JpaRepository 상속 받아줘야함 <Entity, Entity 식별자 타입>
 public interface MenuRepository extends JpaRepository<Menu, Integer> {
 
+    List<Menu> findByMenuPriceGreaterThanOrderByMenuPrice(int menuPrice);
+
+   
 }
