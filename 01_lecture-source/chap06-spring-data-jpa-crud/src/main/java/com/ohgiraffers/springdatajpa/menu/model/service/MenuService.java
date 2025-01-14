@@ -124,9 +124,9 @@ public class MenuService {
 //        repository.save(foundMenu);
 
         /* comment. 값을 수정하는 방식3 - Entity 내부에 builder 패턴을 구현 */
-//        foundMenu = foundMenu.menuName(modifyMenu.getMenuName()).builder();
-//
-//        repository.save(foundMenu);
+        foundMenu = foundMenu.menuName(modifyMenu.getMenuName()).builder();
+
+        repository.save(foundMenu);
     }
 
 //    @Transactional

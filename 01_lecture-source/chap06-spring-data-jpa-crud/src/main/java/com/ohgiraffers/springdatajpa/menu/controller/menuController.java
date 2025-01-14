@@ -7,7 +7,6 @@ import com.ohgiraffers.springdatajpa.menu.model.dto.MenuDTO;
 import com.ohgiraffers.springdatajpa.menu.model.service.MenuService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
@@ -22,7 +21,7 @@ import java.util.List;
 @RequiredArgsConstructor    // 필드에 final 키워드가 붙은 것은 자동으로 생성자 주입을 해준다.
                             // public menuController(MenuService menuService) {this.menuService = menuService} 생략 가능!
 @Slf4j  // Lombok 라이브러리에서 제공하는 로깅 관련 어노테이션
-public class menuController {
+public class MenuController {
 
     private final MenuService menuService;
 

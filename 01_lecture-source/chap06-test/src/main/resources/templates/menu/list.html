@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <th>메뉴 코드</th>
+            <th>메뉴 이름</th>
+            <th>메뉴 가격</th>
+            <th>카테고리 이름</th>
+            <th>판매 여부</th>
+
+        </tr>
+        <tr th:each="menu : ${menuList}">
+            <td th:text="${menu.menuCode}"></td>
+            <td th:text="${menu.menuName}"></td>
+            <td th:text="${menu.menuPrice}"></td>
+            <td th:text="${menu.category.categoryName}"></td>
+            <td th:text="${menu.orderableStatus}"></td>
+
+        </tr>
+
+
+    </table>
+
+
+</body>
+</html>

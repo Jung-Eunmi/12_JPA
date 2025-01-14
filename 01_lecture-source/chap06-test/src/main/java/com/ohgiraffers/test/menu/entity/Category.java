@@ -1,4 +1,4 @@
-package com.ohgiraffers.springdatajpa.menu.entity;
+package com.ohgiraffers.test.menu.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import java.util.List;
-
 
 @Entity
 @Table(name = "tbl_category")
@@ -26,4 +25,7 @@ public class Category {
 
     @Column(name = "ref_category_code")
     private Integer refCategoryCode;
+
+    @OneToMany(mappedBy = "category")
+    private List<Menu> menuList;
 }
