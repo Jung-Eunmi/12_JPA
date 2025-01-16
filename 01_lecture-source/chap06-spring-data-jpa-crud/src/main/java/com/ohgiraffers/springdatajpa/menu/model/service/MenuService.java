@@ -123,10 +123,10 @@ public class MenuService {
 //        // build 를 통해서 foundMenu 를 새롭게 탄생시킨 후 save 메소드를 통해 JPA 에게 전달
 //        repository.save(foundMenu);
 
-        /* comment. 값을 수정하는 방식3 - Entity 내부에 builder 패턴을 구현 */
-        foundMenu = foundMenu.menuName(modifyMenu.getMenuName()).builder();
-
-        repository.save(foundMenu);
+//        /* comment. 값을 수정하는 방식3 - Entity 내부에 builder 패턴을 구현 */
+//        foundMenu = foundMenu.menuName(modifyMenu.getMenuName()).builder();
+//
+//        repository.save(foundMenu);
     }
 
 //    @Transactional
@@ -150,5 +150,16 @@ public class MenuService {
         repository.deleteById(menuCode);
 
         modelMapper.map(menuCode, Menu.class);
+    }
+
+    public List<MenuDTO> findCategoryMenuList(int categoryCode) {
+
+        List<Menu> menuList = repository.findByCategoryCode(categoryCode);
+
+        System.out.println("menuList = " + menuList);
+
+        return menuList.stream()
+                .map(menu -> modelMapper.map(menu, MenuDTO.class))
+                .collect(Collectors.toList());
     }
 }

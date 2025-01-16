@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@RestController
+@Controller
 @RequestMapping("/menu")
 @RequiredArgsConstructor    // 필드에 final 키워드가 붙은 것은 자동으로 생성자 주입을 해준다.
                             // public menuController(MenuService menuService) {this.menuService = menuService} 생략 가능!
@@ -161,4 +161,30 @@ public class MenuController {
 
         return "redirect:/menu/list";
     }
+
+    @GetMapping("/categorymenulist")
+    public String categorymenulistPage() {
+        return "menu/categorymenulist";
+    }
+
+    @GetMapping("/category/{categoryCode}")
+    @ResponseBody
+    public ResponseEntity<?> menuList(@PathVariable int categoryCode, Model model) {
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(new MediaType("application", "json",Charset.forName("UTF-8")));
+
+        System.out.println("categoryCode = " + categoryCode);
+
+        List<MenuDTO> menuList =  menuService.findCategoryMenuList(categoryCode);
+
+        Map<String, Object> resMap = new HashMap<>();
+        resMap.put("menuListByCategory", menuList);
+
+        System.out.println("menuList = " + menuList);
+
+        model.addAttribute("menuList", menuList);
+
+        return ResponseEntity.ok().headers(headers).body(new ResponseMessage(200, "조회 성공!", resMap));
+    }
+
 }

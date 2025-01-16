@@ -23,8 +23,9 @@ public class Menu {
     @Column(name = "menu_price")
     private int menuPrice;
 
-    @Column(name = "category_code")
-    private int categoryCode;
+    @ManyToOne
+    @JoinColumn(name = "category_code", referencedColumnName = "category_code")
+    private Category category;
 
     @Column(name = "orderable_status")
     private String orderableStatus;
@@ -40,8 +41,8 @@ public class Menu {
         this.menuName = var;
         return this;
     }
-
-    public Menu builder() {
-        return new Menu(menuCode, menuName,menuPrice,categoryCode,orderableStatus);
-    }
+//
+//    public Menu builder() {
+//        return new Menu(menuCode, menuName,menuPrice,categoryCode,orderableStatus);
+//    }
 }
