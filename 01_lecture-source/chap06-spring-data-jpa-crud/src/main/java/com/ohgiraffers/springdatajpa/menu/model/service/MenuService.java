@@ -143,4 +143,12 @@ public class MenuService {
     public void deleteMenu(int menuCode) {
         repository.deleteById(menuCode);
     }
+
+    @Transactional
+    public void menuDelte(int menuCode) {
+
+        repository.deleteById(menuCode);
+
+        modelMapper.map(menuCode, Menu.class);
+    }
 }
